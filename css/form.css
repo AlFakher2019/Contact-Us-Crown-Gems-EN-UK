@@ -203,12 +203,12 @@ ul {
 }
 .zf-tempContDiv input[type="text"]:hover,
 .zf-tempContDiv textarea:hover {
-  border: 1px solid rgba(184, 187, 211, 1);
+  border: 2px solid #002FFF;
 }
 .zf-tempContDiv input[type="text"]:focus,
 .zf-tempContDiv textarea:focus {
-  border: 1px solid #101114;
-  box-shadow: 0px 0px 2px 0px #101114;
+  border: 2px solid #002FFF;
+  box-shadow: 0px 0px 4px 0px rgba(0, 47, 255, 0.3);
 }
 
 .zf-tempContDiv textarea {
@@ -332,10 +332,13 @@ ul {
   background-position: right 14px center;
   background-size: 24px 24px;
 }
+.zf-form-sBox:hover {
+  border: 2px solid #002FFF !important;
+}
 .zf-form-sBox:focus,
 .zf-form-sBox:focus:hover {
-  border: 1px solid #000000;
-  box-shadow: 0px 0px 2px 0px #2eb79f;
+  border: 2px solid #002FFF !important;
+  box-shadow: 0px 0px 4px 0px rgba(0, 47, 255, 0.3);
   outline: none;
 }
 .zf-form-sBox::after {
@@ -877,9 +880,10 @@ font-family: 'Poppins', sans-serif;
   font-weight: 600;
   font-size: 16px;
   background: #ebebed;
-  border-radius: 02px;
+  border-radius: 8px;
   min-width: 100px;
-  transition: transform 0.25s cubic-bezier(0.33, 0.04, 0.63, 0.93),
+  transition: background 0.3s ease, color 0.3s ease,
+    transform 0.25s cubic-bezier(0.33, 0.04, 0.63, 0.93),
     -webkit-transform 0.25s cubic-bezier(0.33, 0.04, 0.63, 0.93),
     -o-transform 0.25s cubic-bezier(0.33, 0.04, 0.63, 0.93);
   -webkit-transform: translate3d(0, 0, 0);
@@ -891,6 +895,11 @@ font-family: 'Poppins', sans-serif;
   -webkit-transform: scale3d(1.03, 1.03, 1) translate3d(0, 0, 0)
     perspective(500px);
   transform: scale3d(1.03, 1.03, 1) translate3d(0, 0, 0) perspective(500px);
+}
+
+.zf-submitColor.is-ready {
+  background: #002FFF !important;
+  color: #ffffff !important;
 }
 
 /****************Field Small/Medium/Large Starts Here****************/

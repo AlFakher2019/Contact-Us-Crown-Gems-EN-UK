@@ -274,11 +274,23 @@
                 return !message;
             }
 
+            function checkButtonState() {
+                var submitBtn = document.querySelector('.zf-submitColor');
+                if (!submitBtn) return;
+                var allValid = Object.keys(fields).every(function (key) {
+                    var cfg = fields[key];
+                    if (!cfg || !cfg.el || !cfg.required) return true;
+                    var val = cfg.el.value || '';
+                    return cfg.validate ? !cfg.validate(val) : true;
+                });
+                submitBtn.classList.toggle('is-ready', allValid);
+            }
+
             function attachListeners() {
                 Object.keys(fields).forEach(function (key) {
                     var cfg = fields[key];
                     if (!cfg.el) return;
-                    var handler = function () { validateField(key); };
+                    var handler = function () { validateField(key); checkButtonState(); };
                     cfg.el.addEventListener('input', handler);
                     cfg.el.addEventListener('blur', handler);
                     if (cfg.el.tagName === 'SELECT') {
